@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Nombre step 3
         id: step13
-        run: pwd; ls -la; mkdir -p upload/dir/dir1; mkdir upload/dir/dir2; ls -la; touch upload/dir/dir1/file1; touch upload/dir/dir1/file2
+        run: pwd; ls -la; mkdir -p upload/dir/dir1; mkdir upload/dir/dir2; ls -la; touch upload/dir/dir1/file1; touch upload/dir/dir2/file2
       - name: Nombre step 4
         id: step14
         uses: actions/upload-artifact@v4
