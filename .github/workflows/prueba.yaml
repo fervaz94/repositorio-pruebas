@@ -40,6 +40,6 @@ jobs:
           path: me/lo/invento
       - name: Nombre step 2
         id: step22
-        run: pwd; ls -la; ls -la /me/lo/invento
+        run: pwd; ls -la; ls -la me/lo/invento
   
   
