@@ -29,6 +29,7 @@ jobs:
           path: upload/dir/
   job2:
     name: Nombre job 2
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: Nombre step 1
