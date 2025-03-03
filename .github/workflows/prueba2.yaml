@@ -7,14 +7,12 @@ on:
 jobs:
   job1:
     name: Nonbre job 1
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: directorio
+    runs-on: ubuntu-latest        
     steps:
       - name: Nombre step 1
         id: step11
-        env:
-          ENV1: prueba1
-          ENV2: prueba2
-        run: pwd; ls -la; echo $ENV1; echo $GITHUB_WORKSPACE   
+        uses: actions/checkout@v4
+      - name: Nombre step 2
+        id: step12
+        working-directory: directorio
+        run: pwd; ls -la; echo $GITHUB_WORKSPACE 
