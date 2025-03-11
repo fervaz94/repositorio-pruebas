@@ -1,0 +1,50 @@
+name: Caller reusable workflow
+run-name: Nombre de la ejecucion del Caller reusable workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: Nombre job 1
+    runs-on: ubuntu-latest        
+    steps:
+      - name: Nombre step 1
+        id: step11
+        uses: actions/checkout@v4
+      - name: Nombre step 2
+        id: step12
+        working-directory: directorio
+        run: |
+          echo "variable1=valorvariable1" >> "$GITHUB_ENV"
+          echo "output1=valoroutput1" >> "$GITHUB_OUTPUT" 
+          env
+          echo "fichero de env: $GITHUB_ENV"
+          echo "fichero de out: $GITHUB_OUTPUT"
+          cat $GITHUB_ENV
+          cat $GITHUB_OUTPUT
+      - name: Nombre step 3
+        id: step13
+        working-directory: directorio
+        run: |
+          echo "fichero de env: $GITHUB_ENV"
+          echo "fichero de out: $GITHUB_OUTPUT"
+          cat $GITHUB_ENV
+          cat $GITHUB_OUTPUT
+  job2:
+    name: Nombre job 2
+    runs-on: ubutnu-latest
+    steps:
+      - name: Nombre step 11
+        id: step21
+        run: |
+          env
+          cat $GITHUB_ENV
+          cat $GITHUB_OUTPUT
+  job3:
+    name: Nombre job 3
+    uses: fervaz94/repositorio-pruebas2/.github/workflows/called_reusable_workflow.yaml@main
+
+
+
+  

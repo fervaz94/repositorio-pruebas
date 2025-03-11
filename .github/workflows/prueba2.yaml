@@ -6,7 +6,7 @@ on:
 
 jobs:
   job1:
-    name: Nonbre job 1
+    name: Nombre job 1
     runs-on: ubuntu-latest        
     steps:
       - name: Nombre step 1
