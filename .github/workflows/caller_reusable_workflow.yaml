@@ -33,7 +33,7 @@ jobs:
           cat $GITHUB_OUTPUT
   job2:
     name: Nombre job 2
-    runs-on: ubutnu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Nombre step 11
         id: step21
