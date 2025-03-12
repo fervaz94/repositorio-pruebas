@@ -43,7 +43,7 @@ jobs:
           cat $GITHUB_OUTPUT
   job2:
     name: Nombre job 2
-    continue-on-error: true
+#    continue-on-error: true
     environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
@@ -55,6 +55,7 @@ jobs:
 #          cat $GITHUB_OUTPUT
   job3:
     name: Nombre job 3
+    if: always()
     needs: [job2]
     uses: fervaz94/repositorio-pruebas2/.github/workflows/called_reusable_workflow.yaml@branch2
 
