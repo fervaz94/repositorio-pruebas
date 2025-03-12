@@ -3,6 +3,13 @@ run-name: Nombre de la ejecucion del Caller reusable workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        required: false
+        options:
+          - DEV
+        
   push:
     branches:
     - develop
@@ -36,6 +43,7 @@ jobs:
           cat $GITHUB_OUTPUT
   job2:
     name: Nombre job 2
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - name: Nombre step 11
