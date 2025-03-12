@@ -3,6 +3,9 @@ run-name: Nombre de la ejecucion del Caller reusable workflow
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      develop
 
 jobs:
   job1:
