@@ -41,6 +41,14 @@ jobs:
           echo "fichero de out: $GITHUB_OUTPUT"
           cat $GITHUB_ENV
           cat $GITHUB_OUTPUT
+      - name: Nombre step 4
+        id: step14
+        env:
+          variablecomposite: valorcariablecomposite
+        uses: fervaz94/repositorio-privado@develop
+      - name: Nombre step 5
+        id: step15
+        run: echo
   job2:
     name: Nombre job 2
 #    continue-on-error: true
