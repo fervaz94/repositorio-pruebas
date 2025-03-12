@@ -43,6 +43,7 @@ jobs:
           cat $GITHUB_OUTPUT
   job2:
     name: Nombre job 2
+    continue-on-error: true
     environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
