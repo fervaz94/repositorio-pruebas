@@ -54,6 +54,7 @@ jobs:
           cat $GITHUB_OUTPUT
   job3:
     name: Nombre job 3
+    needs: [job2]
     uses: fervaz94/repositorio-pruebas2/.github/workflows/called_reusable_workflow.yaml@branch2
 
 
