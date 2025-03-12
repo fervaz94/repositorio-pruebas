@@ -48,10 +48,10 @@ jobs:
     steps:
       - name: Nombre step 11
         id: step21
-        run: |
-          env
-          cat $GITHUB_ENV
-          cat $GITHUB_OUTPUT
+        run: dfsdfsdfdsfsd
+#          env
+#          cat $GITHUB_ENV
+#          cat $GITHUB_OUTPUT
   job3:
     name: Nombre job 3
     needs: [job2]
