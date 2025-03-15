@@ -16,7 +16,7 @@ on:
 
 jobs:
   job1:
-    name: Nombre job 1
+    name: ${{ input.environment }}-sufijo
     runs-on: ubuntu-latest        
     steps:
       - name: Nombre step 1
