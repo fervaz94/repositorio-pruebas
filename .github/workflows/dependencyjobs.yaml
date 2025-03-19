@@ -14,11 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step1
+        id: step11
         run: exit 1
         continue-on-error: true
       - name: step2
-        if: failure()
-        run: echo ${{ job.status }}
+        run: |
+          echo ${{ job.status }}
+          echo ${{ steps.step11.outcome }}
+          echo ${{ steps.step11.conclusion }}
   job2:
     name: job2
     needs: [job1]
@@ -26,7 +29,6 @@ jobs:
     runs-on: ubuntu-latest        
     steps:
       - name: step1
-        if: ${{ !failure() }}
         run: echo "job2"
   job3:
     name: job3
