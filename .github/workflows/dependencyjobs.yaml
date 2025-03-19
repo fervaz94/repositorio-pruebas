@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest        
     steps:
       - name: step1
-        if: ! failure()
+        if: ${{ !failure() }}
         run: echo "job2"
   job3:
     name: job3
