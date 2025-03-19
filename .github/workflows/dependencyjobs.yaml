@@ -41,7 +41,7 @@ jobs:
   job3:
     name: job3
     needs: [job2]
-    if: needs.result == "success"
+    if: needs.result == 'success'
     runs-on: ubuntu-latest        
     steps:
       - name: step1
