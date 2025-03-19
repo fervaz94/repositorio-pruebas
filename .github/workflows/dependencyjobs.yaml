@@ -57,6 +57,7 @@ jobs:
   job8:
     name: job8
     runs-on: ubuntu-latest
+    if: failure()
     needs: [job7]
     steps:
       - name: step1
