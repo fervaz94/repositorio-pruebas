@@ -36,7 +36,7 @@ jobs:
   job5:
     name: job5
     needs: [job4]
-    if: failed()
+    if: failure()
     runs-on: ubuntu-latest        
     steps:
       - name: step1
