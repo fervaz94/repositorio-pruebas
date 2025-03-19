@@ -19,9 +19,16 @@ jobs:
         continue-on-error: true
       - name: step2
         run: |
+          echo "var1=valor1" >> "$GITHUB_ENV"
           echo ${{ job.status }}
           echo ${{ steps.step11.outcome }}
           echo ${{ steps.step11.conclusion }}
+      - name: step3
+        env: 
+          var2: valor2
+        run: |
+          echo "${{ env.var1 }}"
+          echo "${{ toJSON(env) }}"
   job2:
     name: job2
     needs: [job1]
