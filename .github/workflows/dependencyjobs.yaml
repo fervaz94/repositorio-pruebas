@@ -4,9 +4,9 @@ run-name: Nombre de la ejecucion del Dependency jobs
 on:
   workflow_dispatch:
 
-concurrency:
-  group: grupo1
-  cancel-in-progress: true
+#concurrency:
+#  group: grupo1
+#  cancel-in-progress: true
   
 jobs:
   job1:
@@ -14,9 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: step1
-        run: |
-          echo ${{ job.status }}
-          exit 1
+        run: exit 1
+      - name: step2
+        if: failure()
+        run: echo ${{ job.status }}
   job2:
     name: job2
     needs: [job1]
@@ -24,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest        
     steps:
       - name: step1
+        if: ! failure()
         run: echo "job2"
   job3:
     name: job3
@@ -56,7 +58,10 @@ jobs:
         run: echo "job6"
   job7:
     name: job7
-    runs-on: ubuntu-latest        
+    runs-on: ubuntu-latest
+    concurrency:
+      group: grupo1
+      cancel-in-progress: true
     steps:
       - name: step1
         run: sleep 20
