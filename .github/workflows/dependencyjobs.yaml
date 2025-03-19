@@ -1,0 +1,50 @@
+name: Dependency jobs
+run-name: Nombre de la ejecucion del Dependency jobs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: job1
+    runs-on: ubuntu-latest        
+    steps:
+      - name: step1
+        run: exit 1
+  job2:
+    name: job2
+    needs: [job1]
+    if: always()
+    runs-on: ubuntu-latest        
+    steps:
+      - name: step1
+        run: echo "job2"
+  job3:
+    name: job3
+    needs: [job2]
+    runs-on: ubuntu-latest        
+    steps:
+      - name: step1
+        run: echo "job3"
+  job4:
+    name: job4
+    needs: [job3]
+    runs-on: ubuntu-latest        
+    steps:
+      - name: step1
+        run: echo "job4"
+  job5:
+    name: job5
+    needs: [job4]
+    if: failed()
+    runs-on: ubuntu-latest        
+    steps:
+      - name: step1
+        run: echo "job5"
+  job6:
+    name: job6
+    needs: [job5]
+    runs-on: ubuntu-latest        
+    steps:
+      - name: step1
+        run: echo "job6"
