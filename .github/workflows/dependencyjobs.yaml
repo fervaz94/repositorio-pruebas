@@ -38,7 +38,7 @@ jobs:
     steps:
       - name: step1
         run: | 
-          echo ${{ toJSON(needs) }}
+          echo "${{ toJSON(needs) }}"
   job4:
     name: job4
     needs: [job3]
