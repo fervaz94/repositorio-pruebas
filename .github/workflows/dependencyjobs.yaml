@@ -68,7 +68,7 @@ jobs:
   job8:
     name: job8
     runs-on: ubuntu-latest
-    if: failure()
+    if: cancelled()
     needs: [job7]
     steps:
       - name: step1
