@@ -41,13 +41,13 @@ jobs:
   job3:
     name: job3
     needs: [job2]
-    if: needs.result == 'success'
+    if: needs.job2.result == 'success'
     runs-on: ubuntu-latest        
     steps:
       - name: step1
         run: | 
           echo "${{ toJSON(needs) }}"
-          echo ${{ needs.result == 'success' }}
+          echo ${{ needs.job2.result == 'success' }}
   job4:
     name: job4
     needs: [job3]
