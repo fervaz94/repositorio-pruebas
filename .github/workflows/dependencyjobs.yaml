@@ -76,6 +76,9 @@ jobs:
     steps:
       - name: step1
         run: sleep 20
+      - name: step2
+        if: cancelled()
+        run: echo "solo ejecuto si cancelo"
   job8:
     name: job8
     runs-on: ubuntu-latest
