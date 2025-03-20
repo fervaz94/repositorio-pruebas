@@ -16,9 +16,8 @@ jobs:
       - name: step1
         id: step11
         run: exit 1
- #       continue-on-error: true
+        continue-on-error: true
       - name: step2
-        if: always()
         run: |
           echo "var1=valor1" >> "$GITHUB_ENV"
           echo ${{ job.status }}
