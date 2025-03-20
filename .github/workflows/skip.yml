@@ -18,11 +18,6 @@ jobs:
       - name: Run a one-line script
         if: 3 == 1
         run: echo Hello, world!
-      - name: Run a one-line script
-        if: always ()
-        run: echo "${{ job.status }}"
-      - name: Run a one-line script
-        run: echo "${{ job.status }}"
       
 
 
