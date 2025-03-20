@@ -81,6 +81,7 @@ jobs:
         run: echo "solo ejecuto si cancelo"
   job8:
     name: job8
+    if: cancelled()
     runs-on: ubuntu-latest
     needs: [job7]
     steps:
